@@ -1,0 +1,265 @@
+
+body {
+  background-color: #fff;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+
+.contactus-wrapper {
+  background-color: #F9F9F9;
+  color: #333;
+  padding: 2rem 1rem;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.contact-title {
+  color: #061657;
+  font-weight: 600;
+  font-size: 1.6rem;
+  border-bottom: 2px solid #061657;
+  display: inline-block;
+  padding-bottom: 4px;
+  margin-bottom: 1rem;
+}
+
+
+iframe {
+  width: 100%;
+  height: 350px;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+.contactus-wrapper h6 {
+  color: #061657;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 0.8rem;
+}
+
+.contactus-wrapper p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+
+:root {
+  --primary-blue: #004aad;
+  --green-btn: #029F0D;
+  --green-btn-hover: #02890c;
+  --muted-border: #e9ecef;
+  --title-red: #FF0000;
+}
+
+
+.btn-success {
+  background-color: var(--green-btn) !important;
+  border: none !important;
+  color: #fff !important;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.btn-success:hover {
+  background-color: var(--green-btn-hover) !important;
+}
+
+
+.contact-form-box {
+  background-color: #fff;
+  border-radius: 12px;
+  border: 1px solid var(--muted-border);
+  padding: 1.5rem;
+}
+
+.form-label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.form-control {
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  border: 1px solid var(--muted-border);
+  box-sizing: border-box;
+}
+
+textarea.form-control {
+  min-height: 90px;
+  resize: vertical;
+}
+
+
+.captcha-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.captcha-box {
+  background: #ffffff;
+  border: 1px solid var(--muted-border);
+  border-radius: 8px;
+  min-width: 160px;
+  min-height: 44px;
+  padding: 6px 10px;
+  position: relative;
+}
+
+.captcha-text {
+  font-family: "Courier New", monospace;
+  font-weight: 700;
+  font-size: 28px;
+  letter-spacing: 2px;
+  transform: rotate(-6deg);
+  color: #111;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+
+.get-in-touch-fixed-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 25px;
+  background-color: var(--green-btn);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 25px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.get-in-touch-fixed-btn:hover {
+  background-color: var(--green-btn-hover);
+  transform: scale(1.05);
+}
+
+
+.popup-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-form {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 0.3s ease;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--green-btn);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #555;
+  cursor: pointer;
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media (max-width: 992px) {
+  .contactus-wrapper {
+    text-align: center;
+  }
+
+  .contactus-wrapper .row {
+    flex-direction: column;
+  }
+
+  iframe {
+    width: 100%;
+    height: 320px;
+  }
+
+  .contactus-wrapper h6 {
+    font-size: 0.95rem;
+  }
+
+  .contactus-wrapper p {
+    font-size: 0.9rem;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .contactus-wrapper {
+    padding: 1.2rem;
+    text-align: center;
+  }
+
+  .contact-title {
+    font-size: 1.3rem;
+  }
+
+  iframe {
+    height: 250px;
+  }
+
+  .contactus-wrapper h6 {
+    font-size: 0.9rem;
+  }
+
+  .contactus-wrapper p {
+    font-size: 0.85rem;
+  }
+
+  .captcha-box {
+    min-width: 120px;
+  }
+
+  .popup-form {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .get-in-touch-fixed-btn {
+    font-size: 13px;
+    padding: 10px 18px;
+  }
+}

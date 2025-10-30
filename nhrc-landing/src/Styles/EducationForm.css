@@ -1,0 +1,236 @@
+.edu-wrapper {
+background: linear-gradient(180deg, #071032 0%, #011139 100%);
+min-height: 100vh;
+padding: 40px 15px;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+font-family: "Poppins", sans-serif;
+}
+
+
+.edu-card {
+background: radial-gradient(circle at center, #0a1a48 0%, #011139 100%);
+border: 2px solid #ffee00;
+border-radius: 12px;
+width: 100%;
+max-width: 950px;
+color: white;
+padding: 35px 40px;
+box-shadow: 0 0 25px rgba(255, 223, 0, 0.2);
+overflow-y: auto;
+max-height: 90vh;
+scrollbar-width: thin;
+scrollbar-color: #ffee00 #0a1a48;
+}
+
+
+.edu-card::-webkit-scrollbar {
+width: 8px;
+}
+.edu-card::-webkit-scrollbar-thumb {
+background-color: #ffee00;
+border-radius: 6px;
+}
+.edu-card::-webkit-scrollbar-track {
+background: transparent;
+}
+
+
+.edu-title {
+text-align: center;
+font-weight: 700;
+font-size: 1.6rem;
+color: #fff;
+margin-bottom: 25px;
+border-bottom: 2px solid #0df00d;
+padding-bottom: 10px;
+letter-spacing: 1px;
+}
+
+
+.edu-tracker {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 15px;
+margin-bottom: 30px;
+}
+.edu-step {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.edu-step p {
+margin-top: 5px;
+font-size: 0.9rem;
+}
+.circle {
+width: 35px;
+height: 35px;
+border-radius: 50%;
+background-color: #ff4d4d;
+color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: 700;
+}
+.edu-step.active .circle {
+background-color: #00c853;
+}
+.arrow {
+font-size: 22px;
+color: #ffee00;
+}
+.arrow.filled {
+color: #00c853;
+}
+
+
+.edu-label {
+font-weight: 600;
+color: #fff;
+margin-bottom: 6px;
+display: block;
+}
+
+.edu-input,
+.edu-select {
+width: 100%;
+padding: 10px 12px;
+border-radius: 6px;
+border: none;
+background-color: #0b1c55;
+color: #fff;
+font-size: 0.95rem;
+outline: none;
+}
+
+.edu-input:focus,
+.edu-select:focus {
+border: 1.5px solid #00ffae;
+background-color: #081b49;
+}
+
+.edu-input::placeholder {
+color: #ccc;
+}
+
+
+.edu-captcha-section {
+display: flex;
+flex-direction: column;
+}
+.edu-captcha-box {
+display: flex;
+align-items: center;
+justify-content: space-between;
+background-color: white;
+color: black;
+font-weight: bold;
+letter-spacing: 2px;
+border-radius: 6px;
+padding: 5px 10px;
+margin-bottom: 8px;
+width: 220px;
+}
+.edu-captcha-code {
+font-size: 18px;
+font-family: monospace;
+}
+.edu-refresh-btn {
+background: none;
+border: none;
+color: #011139;
+font-size: 20px;
+cursor: pointer;
+}
+
+
+.edu-btn {
+font-weight: 600;
+padding: 10px 28px;
+border-radius: 6px;
+border: none;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.edu-next-btn,
+.edu-submit-btn {
+background-color: #03c403;
+color: white;
+}
+.edu-next-btn:hover,
+.edu-submit-btn:hover {
+background-color: #02a803;
+transform: scale(1.05);
+}
+
+.edu-back-btn {
+background-color: gray;
+color: white;
+}
+.edu-back-btn:hover {
+background-color: #5a5a5a;
+transform: scale(1.05);
+}
+
+
+.edu-logo {
+width: 150px;
+height: auto;
+border-radius: 50%;
+background-color: white;
+padding: 8px;
+display: block;
+margin: auto;
+}
+
+
+@media (max-width: 992px) {
+.edu-card {
+padding: 25px 30px;
+}
+.edu-title {
+font-size: 1.4rem;
+}
+.edu-input,
+.edu-select {
+font-size: 0.9rem;
+}
+}
+
+@media (max-width: 768px) {
+.edu-card {
+max-height: 85vh;
+}
+.edu-title {
+font-size: 1.3rem;
+}
+.edu-captcha-box,
+.edu-captcha-section input {
+width: 100%;
+}
+.edu-btn {
+width: 100%;
+}
+}
+
+@media (max-width: 480px) {
+.edu-title {
+font-size: 1.2rem;
+}
+.edu-card {
+padding: 20px;
+}
+.circle {
+width: 30px;
+height: 30px;
+font-size: 14px;
+}
+.arrow {
+font-size: 18px;
+}
+}

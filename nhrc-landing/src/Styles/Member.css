@@ -1,0 +1,186 @@
+.memberpage-wrapper {
+background: linear-gradient(180deg, #000a2b 0%, #051642 100%);
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+padding: 40px 10px;
+font-family: "Poppins", sans-serif;
+}
+
+.memberpage-card {
+background: radial-gradient(circle at center, #00164d 0%, #000a2b 100%);
+border: 2px solid #f5d50d;
+border-radius: 15px;
+width: 100%;
+max-width: 950px;
+color: white;
+box-shadow: 0 0 25px rgba(255, 223, 0, 0.2);
+padding: 40px;
+}
+
+.memberpage-title {
+color: #ffffff;
+font-weight: 700;
+font-size: 1.7rem;
+text-transform: uppercase;
+border-bottom: 2px solid #f5d50d;
+padding-bottom: 10px;
+text-align: left;
+margin-bottom: 30px;
+letter-spacing: 1px;
+}
+
+.form-label {
+font-weight: 600;
+color: #ffffff;
+margin-bottom: 6px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.text-danger {
+color: #ff3b3b !important;
+margin-left: 5px;
+}
+
+.form-control,
+.form-select {
+background-color: #ffffff;
+border: none;
+border-radius: 6px;
+padding: 8px 10px;
+font-size: 0.95rem;
+color: #000;
+transition: all 0.2s ease-in-out;
+}
+
+.form-control:focus,
+.form-select:focus {
+outline: 2px solid #00e676;
+box-shadow: none;
+}
+
+.input-group-text {
+background-color: #f5d50d;
+color: #000;
+font-weight: 600;
+border: none;
+}
+
+.form-check {
+display: flex;
+align-items: center;
+margin-top: 15px;
+}
+
+.form-check-input {
+width: 22px;
+height: 22px;
+cursor: pointer;
+accent-color: #00e676;
+margin-right: 10px;
+}
+
+.form-check-label {
+color: #ffffff;
+font-weight: 500;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+
+.iconwhat {
+color: #25d366;
+font-size: 1.3rem;
+}
+
+.memberpage-btn {
+background-color: #00b33c;
+border: none;
+color: #ffffff;
+font-weight: 600;
+font-size: 1rem;
+padding: 10px 35px;
+border-radius: 6px;
+transition: all 0.3s ease;
+}
+
+.memberpage-btn:hover {
+background-color: #029f35;
+transform: scale(1.05);
+}
+
+.popup-overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.8);
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 999;
+}
+
+.popup-content {
+background-color: #071032;
+border: 2px solid #f5d50d;
+border-radius: 12px;
+padding: 20px;
+max-width: 950px;
+width: 95%;
+color: white;
+position: relative;
+}
+
+.close-btn {
+position: absolute;
+top: 10px;
+right: 15px;
+background: none;
+color: #ffffff;
+border: none;
+font-size: 1.5rem;
+cursor: pointer;
+}
+
+
+@media (max-width: 992px) {
+.memberpage-card {
+padding: 30px;
+}
+.memberpage-title {
+font-size: 1.5rem;
+}
+}
+
+@media (max-width: 768px) {
+.memberpage-wrapper {
+padding: 20px;
+}
+.memberpage-card {
+padding: 25px;
+}
+.memberpage-btn {
+width: 100%;
+}
+.form-label {
+font-size: 0.9rem;
+}
+}
+
+@media (max-width: 480px) {
+.memberpage-card {
+padding: 20px;
+}
+.memberpage-title {
+font-size: 1.2rem;
+}
+.form-control,
+.form-select {
+font-size: 0.85rem;
+}
+}

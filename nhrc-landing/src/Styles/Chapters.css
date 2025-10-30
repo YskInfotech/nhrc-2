@@ -1,0 +1,222 @@
+body {
+  background-color: #f9f9f9;
+  font-family: "Poppins", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+.section-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #061657;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.underline {
+  width: 120px;
+  height: 4px;
+  background-color: #061657;
+  margin: 8px auto 20px auto;
+  border-radius: 2px;
+}
+
+
+.chapter-card {
+  background-color: #ffffff;
+  border: 1px solid #e4e4e4;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.chapter-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transform: translateY(-6px);
+}
+
+
+.icon-container {
+  background-color: #fff;
+  width: 90px;
+  height: 90px;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon-container:hover {
+  transform: scale(1.08);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.chapter-icon {
+  width: 55px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+
+.chapter-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+  margin-top: 10px;
+}
+
+.chapter-members {
+  font-size: 15px;
+  color: #555;
+  margin: 10px 0 20px 0;
+}
+
+.get-btn {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+
+.btn-danger {
+  background-color: #ffffff;
+  color: #dc3545;
+  border: 2px solid red;
+}
+
+.btn-danger:hover {
+  background-color: #dc3545;
+  color: #ffffff;
+}
+
+
+@media (min-width: 1200px) {
+  .chapter-card {
+    padding: 2.5rem 2rem;
+  }
+  .chapter-title {
+    font-size: 21px;
+  }
+  .chapter-members {
+    font-size: 16px;
+  }
+  .icon-container {
+    width: 100px;
+    height: 100px;
+  }
+  .chapter-icon {
+    width: 60px;
+  }
+}
+
+@media (max-width: 992px) {
+  .section-title {
+    font-size: 26px;
+  }
+  .chapter-card {
+    padding: 1.5rem;
+  }
+  .icon-container {
+    width: 80px;
+    height: 80px;
+  }
+  .chapter-icon {
+    width: 45px;
+  }
+  .chapter-title {
+    font-size: 18px;
+  }
+  .chapter-members {
+    font-size: 14px;
+  }
+  .get-btn {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 22px;
+  }
+  .underline {
+    width: 90px;
+  }
+  .chapter-card {
+    padding: 1.3rem 1rem;
+  }
+  .chapter-title {
+    font-size: 17px;
+  }
+  .chapter-members {
+    font-size: 13px;
+  }
+  .icon-container {
+    width: 75px;
+    height: 75px;
+  }
+  .chapter-icon {
+    width: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 20px;
+  }
+  .underline {
+    width: 70px;
+  }
+  .chapter-card {
+    padding: 1rem;
+  }
+  .chapter-title {
+    font-size: 16px;
+  }
+  .chapter-members {
+    font-size: 13px;
+  }
+  .icon-container {
+    width: 65px;
+    height: 65px;
+  }
+  .chapter-icon {
+    width: 35px;
+  }
+  .get-btn {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .chapter-card {
+    padding: 0.8rem;
+  }
+  .chapter-title {
+    font-size: 15px;
+  }
+  .chapter-members {
+    font-size: 12px;
+  }
+  .icon-container {
+    width: 60px;
+    height: 60px;
+  }
+  .chapter-icon {
+    width: 30px;
+  }
+}

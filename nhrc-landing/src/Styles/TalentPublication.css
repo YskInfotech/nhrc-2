@@ -1,0 +1,254 @@
+
+
+:root {
+--bg: #f9f9f9;
+--accent: #029f0d;
+--card-w: 220px;
+}
+
+
+.talent-section {
+display: flex;
+align-items: flex-start;
+justify-content: space-between;
+padding: 3rem 8rem;
+background-color: var(--bg);
+gap: 2rem;
+margin-top: -1.5cm;
+box-sizing: border-box;
+}
+
+
+.talent-left {
+display: flex;
+flex-direction: column;
+align-items: center; 
+gap: 1.5rem;
+order: 1;
+}
+
+
+.talent-cards {
+display: flex;
+gap: 1.2rem;
+align-items: flex-start;
+flex-wrap: nowrap;
+overflow-x: auto;
+-webkit-overflow-scrolling: touch;
+padding-bottom: 6px;
+margin: 0;
+justify-content: center; 
+}
+
+
+.talent-card {
+background: #fff;
+border-radius: 12px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+overflow: hidden;
+width: var(--card-w);
+min-width: var(--card-w);
+transition: transform 0.25s ease;
+cursor: pointer;
+border: 2px solid transparent;
+flex: 0 0 auto;
+}
+
+.talent-card:hover {
+transform: translateY(-6px);
+}
+
+.talent-card.selected {
+box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
+border-color: rgba(2, 159, 13, 0.12);
+}
+
+
+.talent-image {
+width: 100%;
+height: 300px;
+object-fit: cover;
+display: block;
+border-radius: 10px;
+}
+
+
+.talent-download-center {
+margin-top: 1rem;
+display: flex;
+justify-content: center; 
+align-items: center;
+width: 100%;
+}
+
+
+.single-download-btn {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 0.5rem;
+background-color: var(--accent);
+color: #fff;
+padding: 0.6rem 1rem;
+border: none;
+border-radius: 8px;
+font-size: 1rem;
+font-weight: 700;
+cursor: pointer;
+transition: background-color 0.18s ease, transform 0.12s ease;
+white-space: nowrap;
+}
+
+.single-download-btn:hover:not(:disabled) {
+background-color: #027c0a;
+transform: translateY(-2px);
+}
+
+.single-download-btn:disabled {
+background-color: #9ed19e;
+cursor: not-allowed;
+opacity: 0.8;
+}
+
+
+.talent-content {
+max-width: 480px;
+order: 2;
+display: flex;
+flex-direction: column;
+justify-content: center;
+gap: 1rem;
+align-self: center;
+}
+
+.talent-content h2 {
+font-size: 1.8rem;
+font-weight: 700;
+color: #111;
+margin: 0;
+}
+
+.talent-content p {
+margin: 0;
+font-size: 1rem;
+color: rgb(32, 32, 32);
+line-height: 1.8;
+}
+
+
+.talent-cards::-webkit-scrollbar {
+height: 8px;
+}
+.talent-cards::-webkit-scrollbar-thumb {
+background: rgba(0, 0, 0, 0.12);
+border-radius: 8px;
+}
+
+
+@media (max-width: 1200px) {
+.talent-section {
+padding: 2.5rem 4rem;
+gap: 1.5rem;
+}
+.talent-image {
+height: 260px;
+}
+.talent-content h2 {
+font-size: 1.6rem;
+}
+.single-download-btn {
+padding: 0.55rem 0.9rem;
+font-size: 0.95rem;
+}
+}
+
+
+@media (max-width: 992px) {
+.talent-section {
+flex-direction: column;
+align-items: stretch;
+padding: 2rem 1.75rem;
+}
+
+.talent-content {
+order: 1;
+width: 100%;
+max-width: none;
+text-align: center;
+align-items: center;
+}
+
+.talent-left {
+order: 2;
+width: 100%;
+align-items: center;
+}
+
+.talent-cards {
+flex-wrap: wrap;
+justify-content: center;
+overflow: visible;
+gap: 1rem;
+}
+
+.talent-card {
+width: calc(50% - 1rem);
+min-width: unset;
+max-width: 420px;
+}
+
+.talent-image {
+height: 220px;
+}
+
+.talent-download-center {
+justify-content: center;
+margin-top: 1rem;
+}
+.single-download-btn {
+width: 60%;
+max-width: 360px;
+}
+}
+
+
+@media (max-width: 576px) {
+.talent-section {
+padding: 1.25rem;
+gap: 1rem;
+}
+.talent-cards {
+gap: 0.75rem;
+}
+.talent-card {
+width: 100%;
+}
+.talent-image {
+height: 220px;
+border-radius: 10px;
+}
+.talent-content h2 {
+font-size: 1.45rem;
+}
+.talent-content p {
+font-size: 0.95rem;
+line-height: 1.6;
+}
+.single-download-btn {
+width: 100%;
+padding: 0.65rem;
+}
+}
+
+
+@media (max-width: 400px) {
+.talent-image {
+height: 200px;
+}
+.talent-content h2 {
+font-size: 1.3rem;
+}
+.talent-content p {
+font-size: 0.9rem;
+}
+}

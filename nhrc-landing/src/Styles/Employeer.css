@@ -1,0 +1,46 @@
+.member-card{
+    background-color: #071032;
+    padding: 30px;
+    border: yellow 3px solid !important;
+}
+.form-label{
+    color: white !important;
+}
+.iconwhat{
+    color: rgb(19, 210, 51) !important;
+    width: 40px;
+    height: 40px;
+}
+.notifi{
+    color: white;
+    margin-left: 0.6cm;
+}
+.form-check-input{
+    width: 30px;
+    height: 30px;
+}
+.member-title{
+    color:#ff0000;
+    font-weight: 700;
+    text-align: center;
+    font-variant: small-caps;
+}
+
+.load{
+    font-size: 1cm;
+
+}
+
+.enter-captcha{
+    margin-top: 1.4cm;
+}
+
+.reg-btn{
+    width: 150px;
+    height: 50px;
+    background-color: #029F0D;
+    border-radius: 10px;
+    color: white;
+    margin-left: 3cm;
+    margin-top: 1cm;
+}

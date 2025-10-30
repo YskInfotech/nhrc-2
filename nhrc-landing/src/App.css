@@ -1,0 +1,169 @@
+/* ===== Heading Style ===== */
+.service-heading123 {
+  color: #061657;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  margin: 30px auto 40px auto;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Decorative underline */
+.service-heading123::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background-color: #061657;
+  border-radius: 4px;
+}
+
+/* ===== Container Layout ===== */
+.services-container {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #fff;
+  padding: 1.5rem 1rem 3rem;
+}
+
+/* Stack all service cards vertically */
+.service-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* reduced gap between each card */
+}
+
+/* ===== Each Service Card ===== */
+.service-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Text content */
+.service-content {
+  flex: 1;
+  min-width: 280px;
+}
+
+.service-content h2 {
+  color: #061657;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.service-content p {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Image section */
+.service-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-image img {
+  width: 90%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.service-image img:hover {
+  transform: scale(1.02);
+}
+
+/* ===== Responsive Design ===== */
+
+/* Tablets and below */
+@media (max-width: 992px) {
+  .service-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .service-content {
+    order: 1;
+    padding: 0 1rem;
+  }
+
+  .service-image {
+    order: 2;
+    width: 100%;
+  }
+
+  .service-image img {
+    width: 100%;
+    max-width: none;
+    border-radius: 0;
+  }
+
+  .service-heading123 {
+    font-size: 1.8rem;
+    margin-bottom: 35px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 576px) {
+  .service-heading123 {
+    font-size: 1.5rem;
+    margin: 20px auto 30px;
+  }
+
+  .service-heading123::after {
+    width: 80px;
+  }
+
+  .service-card {
+    gap: 0.8rem;
+  }
+
+  .service-content h2 {
+    font-size: 1.25rem;
+  }
+
+  .service-content p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 400px) {
+  .service-heading123 {
+    font-size: 1.3rem;
+    margin: 15px auto 25px;
+  }
+
+  .service-heading123::after {
+    width: 60px;
+  }
+
+  .service-card {
+    gap: 0.6rem;
+  }
+}

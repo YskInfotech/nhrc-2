@@ -1,0 +1,236 @@
+
+.aboutus-wrapper {
+  background-color: #ffffff;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #1a1a1a;
+  overflow-x: hidden;
+}
+
+
+.aboutus-section {
+  background-color: #ffffff;
+  padding: 3rem 0;
+  margin-bottom: 0;
+}
+
+.second-section {
+  padding-top: 1rem;
+}
+
+
+.aboutus-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  background-color: #ffffff;
+  max-width: 95%;
+  margin-left: auto;
+}
+
+.aboutus-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+
+.aboutus-text {
+  padding: 1rem;
+}
+
+.aboutus-text p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: #474747;
+  font-weight: 500;
+}
+
+.aboutus-text .aboutus-heading {
+  color: #000000;
+  font-weight: 700;
+  font-size: 25px;
+  margin-bottom: 0.8rem;
+}
+
+.aboutus-subheading {
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.aboutus-text .aboutus-subheading {
+  letter-spacing: 1px;
+  color: #061657;
+  font-weight: 700;
+  position: relative;
+  border-radius: 0 0 10px 10px;
+  font-size: 30px;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-left: 4cm;
+}
+
+.aboutus-text .aboutus-subheading::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #061657;
+}
+
+
+.circle-large img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blue-shape {
+  position: absolute;
+  background-color: #061657;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+
+@media (min-width: 1200px) {
+  .aboutus-text .aboutus-subheading {
+    margin-left: 4cm;
+    font-size: 30px;
+  }
+  .aboutus-text p {
+    font-size: 18px;
+  }
+  .circle-large {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+
+@media (max-width: 1199px) {
+  .aboutus-text .aboutus-subheading {
+    margin-left: 2.5cm;
+    font-size: 28px;
+  }
+
+  .aboutus-text p {
+    font-size: 17px;
+  }
+
+  .circle-large {
+    width: 260px;
+    height: 260px;
+  }
+
+  .aboutus-section {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+
+@media (max-width: 991px) {
+  .aboutus-section .row {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .aboutus-text {
+    padding: 1rem 0.5rem;
+  }
+
+  .aboutus-text .aboutus-subheading {
+    margin-left: 0;
+    font-size: 26px;
+  }
+
+  .aboutus-text .aboutus-heading {
+    font-size: 23px;
+  }
+
+  .aboutus-text p {
+    font-size: 16px;
+  }
+
+  .aboutus-card {
+    margin: 0 auto;
+  }
+
+  .circle-large {
+    width: 220px;
+    height: 220px;
+    margin: 1rem auto;
+  }
+
+  .blue-shape {
+    width: 90%;
+    height: 80%;
+    top: 15px;
+    left: 15px;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .aboutus-section {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .aboutus-text .aboutus-subheading {
+    margin-left: 0;
+    font-size: 24px;
+  }
+
+  .aboutus-text .aboutus-heading {
+    font-size: 21px;
+  }
+
+  .aboutus-text p {
+    font-size: 15px;
+  }
+
+  .circle-large {
+    width: 180px;
+    height: 180px;
+  }
+
+  .blue-shape {
+    display: none;
+  }
+}
+
+
+@media (max-width: 575px) {
+  .aboutus-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .aboutus-text .aboutus-subheading {
+    font-size: 22px;
+    margin-left: 0;
+  }
+
+  .aboutus-text .aboutus-heading {
+    font-size: 20px;
+  }
+
+  .aboutus-text p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .circle-large {
+    width: 150px;
+    height: 150px;
+  }
+
+  .aboutus-card {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
