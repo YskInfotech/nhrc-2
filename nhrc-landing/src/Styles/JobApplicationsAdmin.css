@@ -1,0 +1,202 @@
+
+.ja-admin-wrapper {
+  width: 100%;
+  padding: 20px 30px;
+  background: #f4f4f4;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+
+
+.ja-admin-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #b91c1c;
+  margin-bottom: 25px;
+}
+
+
+.ja-filter-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.08);
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.ja-filter-input {
+  width: 220px;
+  height: 42px;
+  border: 1px solid #cfcfcf;
+  border-radius: 8px;
+  padding: 0 12px;
+  font-size: 14px;
+  background: #ffffff;
+  box-shadow: inset 0px 1px 4px rgba(0,0,0,0.08);
+}
+
+
+.ja-apply-btn {
+  background: #0023ff;
+  color: white;
+  border: none;
+  width: 120px;
+  height: 42px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
+}
+
+.ja-apply-btn:hover {
+  background: #001cd1;
+}
+
+
+.ja-status-bar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  padding-left: 5px;
+  flex-wrap: wrap;
+}
+
+.ja-select-all {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.ja-status-box {
+  padding: 7px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  color: white;
+  font-size: 14px;
+  min-width: 120px;
+  text-align: center;
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.12);
+}
+
+.green { background: #16a34a; }
+.orange { background: #f97316; }
+.red { background: #dc2626; }
+
+
+.ja-delete-btn {
+  padding: 8px 16px;
+  background: #dc2626;
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.ja-delete-btn:hover {
+  background: #b91c1c;
+}
+
+
+.ja-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.08);
+}
+
+.ja-table thead {
+  background: #002147;
+  color: white;
+}
+
+.ja-table th {
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.ja-table td {
+  padding: 14px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #ececec;
+}
+
+.ja-table tbody tr:hover {
+  background: #f6f9fc;
+}
+
+
+.ja-tag {
+  padding: 5px 12px;
+  font-weight: 700;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.ja-tag.green { background: #e6fbe7; color: #16a34a; }
+.ja-tag.orange { background: #fff1e5; color: #f97316; }
+.ja-tag.red { background: #ffe5e5; color: #dc2626; }
+
+
+.ja-view-btn {
+  background: #0048ff;
+  padding: 6px 12px;
+  color: white;
+  border-radius: 6px;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
+}
+
+.ja-view-btn:hover {
+  background: #0036c4;
+}
+
+
+@media (max-width: 900px) {
+  .ja-filter-row {
+    flex-wrap: wrap;
+  }
+
+  .ja-filter-input {
+    width: 100%;
+  }
+
+  .ja-apply-btn {
+    width: 100%;
+  }
+
+  .ja-status-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .ja-admin-title {
+    font-size: 26px;
+  }
+
+  .ja-table th, .ja-table td {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .ja-view-btn {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}

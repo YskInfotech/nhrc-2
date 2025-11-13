@@ -1,0 +1,151 @@
+.cp-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+
+.cp-title {
+  text-align: center;
+  color: #b30000;
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+
+.cp-breadcrumb {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.cp-breadcrumb span {
+  color: black;
+  font-weight: 600;
+}
+
+
+.cp-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.cp-btn {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.cp-btn-shortlist { background: #2ecc71; }
+.cp-btn-reject { background: #e74c3c; }
+.cp-btn-email { background: #3498db; }
+.cp-btn-forward { background: #8e44ad; }
+.cp-btn-download { background: #f39c12; }
+.cp-btn-delete { background: #c0392b; }
+
+
+.cp-section {
+  margin-top: 25px;
+  background: #fff;
+  border-radius: 10px;
+  padding-bottom: 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+.cp-section-header {
+  background: #003366;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px 10px 0 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+.cp-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  padding: 18px;
+}
+
+.cp-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.cp-field.full {
+  grid-column: span 2;
+}
+
+
+.cp-field input,
+.cp-field textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: #fff;
+  box-shadow: inset 0 1px 4px rgba(0,0,0,0.2);
+  font-size: 14px;
+}
+
+.cp-field textarea {
+  resize: none;
+}
+
+
+.cp-field label {
+  font-size: 14px;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+
+.cp-upload-btn {
+  background: #003366;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  width: 120px;
+}
+
+.cp-back-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.cp-back-btn {
+  background-color: #003366;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.cp-back-btn:hover {
+  background-color: #00224d;
+}
+
+
+@media screen and (max-width: 700px) {
+  .cp-form {
+    grid-template-columns: 1fr;
+  }
+  .cp-field.full {
+    grid-column: span 1;
+  }
+}

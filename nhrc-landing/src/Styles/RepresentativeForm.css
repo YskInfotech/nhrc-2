@@ -1,0 +1,180 @@
+
+
+.repuni-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #071032 0%, #071032 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  font-family: "Poppins", sans-serif;
+}
+
+.repuni-card {
+  background: radial-gradient(circle at center, #011b50 0%, #071032 100%);
+  border: 2px solid #f5d50d;
+  border-radius: 12px;
+  padding: 35px;
+  width: 100%;
+  max-width: 950px;
+  color: white;
+  box-shadow: 0 0 20px rgba(245, 213, 13, 0.3);
+}
+
+.repuni-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  color: #f5d50d;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.repuni-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 30px;
+}
+
+.repuni-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.repuni-field label {
+  color: #f5d50d;
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.repuni-field input,
+.repuni-field select,
+.repuni-field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #f5d50d;
+  background-color: #071032;
+  color: #fff;
+  outline: none;
+  font-size: 14px;
+}
+
+.repuni-field textarea {
+  resize: none;
+  height: 70px;
+}
+
+.repuni-field input::placeholder {
+  color: #cfcfcf;
+}
+
+
+.repuni-captcha {
+  margin-top: 25px;
+}
+.repuni-captcha p {
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 6px;
+}
+.repuni-captcha-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.repuni-captcha-box span {
+  color: #ff5050;
+  font-weight: 600;
+}
+.repuni-captcha-box input {
+  width: 80px;
+  text-align: center;
+  border-radius: 6px;
+}
+
+
+.repuni-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.repuni-back-btn,
+.repuni-register-btn {
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.repuni-back-btn {
+  background: transparent;
+  border: 1px solid #f5d50d;
+  color: #f5d50d;
+}
+.repuni-back-btn:hover {
+  background: #f5d50d;
+  color: #071032;
+}
+
+.repuni-register-btn {
+  background: #28a745;
+  color: #fff;
+  border: none;
+}
+.repuni-register-btn:hover {
+  background: #34d058;
+}
+
+
+.repuni-popup {
+  background: #011b50;
+  border: 2px solid #f5d50d;
+  border-radius: 12px;
+  padding: 35px;
+  max-width: 500px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 25px rgba(245, 213, 13, 0.4);
+}
+
+.repuni-popup-info {
+  background: rgba(245, 213, 13, 0.1);
+  border-radius: 8px;
+  margin: 15px 0;
+  padding: 15px;
+  line-height: 1.6;
+}
+
+.repuni-continue-btn {
+  background: #28a745;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.repuni-continue-btn:hover {
+  background: #34d058;
+}
+
+
+@media (max-width: 768px) {
+  .repuni-grid {
+    grid-template-columns: 1fr;
+  }
+  .repuni-card {
+    padding: 25px;
+  }
+  .repuni-title {
+    font-size: 18px;
+  }
+  .repuni-footer {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

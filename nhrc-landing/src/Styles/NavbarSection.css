@@ -1,14 +1,18 @@
 
 .custom-navbar {
-  background-color: #ffffff;
-  box-shadow: 5px 7px 12px rgba(0, 0, 0, 0.1);
+  background-color:white; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   font-family: "Poppins", sans-serif;
-  padding: 6px 25px;
+  padding: 6px 20px; 
   z-index: 9999;
 }
 
+.navbar-brand {
+  margin-left: 20px; 
+}
+
 .navbar-brand img {
-  height: 65px;
+  height: 65px; 
   width: auto;
   object-fit: contain;
 }
@@ -17,20 +21,23 @@
 .navbar-center {
   display: flex;
   align-items: center;
-  gap: 26px;
+  gap: 14px; 
+  margin-left: 30px; 
 }
 
 .nav-link-custom {
   position: relative;
   color: #061657 !important;
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 600;
   text-decoration: none;
+  padding: 4px 6px !important; 
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .nav-link-custom:hover {
-  color: orange !important;
+  color: #ffa500 !important;
 }
 
 .nav-link-custom::after {
@@ -40,7 +47,7 @@
   bottom: -3px;
   width: 0%;
   height: 2px;
-  background-color: orange;
+  background-color: #ffa500;
   transition: width 0.3s ease;
 }
 
@@ -58,10 +65,10 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background: #fff;
-  min-width: 180px;
+  background: #ffffff;
+  min-width: 160px;
   border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   z-index: 1000;
 }
 
@@ -70,51 +77,53 @@
 }
 
 .dropdown-item-hover {
-  padding: 8px 14px;
+  padding: 7px 12px;
   display: block;
   color: #061657;
-  font-size: 13px;
+  font-size: 12.5px;
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
 .dropdown-item-hover:hover {
-  background-color: #061657;
+  background-color: #011b50;
   color: #fff;
+  
 }
 
 
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px; 
+  margin-left: 10px; 
+}
+
+.btn-custom-green,
+.btn-outline-danger-custom {
+  border-radius: 40px !important;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .btn-custom-green {
-  color: #029f0d !important;
-  border: 2.5px solid #029f0d !important;
+  color: #03c20b !important;
+  border: 2px solid #03c20b !important;
   background-color: transparent !important;
-  border-radius: 50px !important;
-  padding: 2px 8px;
-  font-size: 12.5px;
-  font-weight: 600;
-  transition: all 0.3s ease;
 }
 
 .btn-custom-green:hover {
-  background-color: #029f0d !important;
+  background-color: #03c20b !important;
   color: #fff !important;
 }
 
 .btn-outline-danger-custom {
   color: #dc3545 !important;
-  border: 2.5px solid #dc3545 !important;
+  border: 2px solid #dc3545 !important;
   background-color: transparent !important;
-  border-radius: 50px !important;
-  padding: 2px 8px;
-  font-size: 12.5px;
-  font-weight: 600;
-  transition: all 0.3s ease;
 }
 
 .btn-outline-danger-custom:hover {
@@ -122,82 +131,255 @@
   color: #fff !important;
 }
 
-
-.custom-toggle {
-  border: none !important;
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-.custom-toggle:focus {
-  outline: none !important;
-  box-shadow: none !important;
+.login-modal .modal-content {
+  border-radius: 15px;
+  overflow: hidden;
+  max-width: 800px;
+  margin: auto;
 }
 
 
-@media (max-width: 991px) {
+.membership-modal .modal-dialog {
+  max-width: 750px; 
+  width: 90%;
+  margin: 1rem auto;
+}
+
+.membership-modal .modal-content {
+  background: linear-gradient(180deg, #071032 0%, #071032 100%);
+  
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 0 25px rgba(245, 213, 13, 0.2);
+  overflow: hidden;
+}
+
+.membership-modal .modal-header {
+  background: #071032;
+  border-bottom: 1px solid #f5d50d;
+  color: white;
+}
+
+.membership-modal .modal-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.membership-modal .btn-close {
+  filter: invert(1);
+}
+
+.membership-modal .modal-body {
+  padding: 1rem 1.5rem;
+  max-height: 80vh; 
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #f5d50d #071032;
+}
+
+
+.membership-modal .modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+.membership-modal .modal-body::-webkit-scrollbar-track {
+  background: #071032 !important;
+}
+.membership-modal .modal-body::-webkit-scrollbar-thumb {
+  background-color: #f5d50d;
+  border-radius: 6px;
+}
+
+.login-modal .modal-dialog {
+  max-width: 750px; 
+  width: 100%;
+  margin: 1.5rem auto;
+}
+
+.login-modal .modal-content {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+  border: none;
+  overflow: hidden;
+}
+
+.login-modal .modal-header {
+  background: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.login-modal .modal-title {
+  font-size: 1.3rem;
+  color: #051e83;
+  font-weight: 700;
+}
+
+.login-modal .btn-close {
+  filter: none;
+}
+
+
+@media (max-width: 768px) {
+  .login-modal .modal-dialog {
+    max-width: 95%;
+  }
+}
+
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .navbar-brand img {
+    height: 45px;
+  }
+
   .navbar-center {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
-    margin-top: 10px;
-  }
-
-  .navbar-right {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    margin-top: 15px;
-  }
-
-  .dropdown-hover-menu {
-    position: relative;
-    box-shadow: none;
-    border-radius: 0;
-    padding-left: 8px;
-    margin-top: 4px;
-  }
-
-  .dropdown-item-hover {
-    font-size: 13px;
-    padding: 6px 10px;
-  }
-
-  .navbar-brand img {
-    height: 60px;
-  }
-}
-
-
-@media (max-width: 599px) {
-  .navbar-brand img {
-    height: 55px;
-  }
-
-  .btn-custom-green,
-  .btn-outline-danger-custom {
-    font-size: 11.5px;
-    padding: 3px 10px;
+    gap: 6px;
+    margin-left: 15px;
   }
 
   .nav-link-custom {
-    font-size: 13px;
-  }
-}
-
-
-@media (max-width: 400px) {
-  .navbar-brand img {
-    height: 50px;
+    font-size: 11.5px;
+    padding: 1px 1px !important;
   }
 
   .btn-custom-green,
   .btn-outline-danger-custom {
     font-size: 10.5px;
-    padding: 3px 8px;
+    padding: 1px 5px;
+  }
+
+  .navbar-right {
+    gap: 6px;
+  }
+}
+
+
+@media (min-width: 820px) and (max-width: 991px) {
+  .navbar-brand img {
+    height: 38px;
+  }
+
+  .navbar-center {
+    gap: 4px;
+    margin-left: 10px;
   }
 
   .nav-link-custom {
-    font-size: 12px;
+    font-size: 9.5px;
+    padding: 1px 0 !important;
+  }
+
+  .btn-custom-green,
+  .btn-outline-danger-custom {
+    font-size: 9px;
+    padding: 1px 4px;
+  }
+
+  .navbar-right {
+    gap: 4px;
+  }
+}
+
+
+@media (min-width: 700px) and (max-width: 819px) {
+  .navbar-brand img {
+    height: 34px;
+  }
+
+  .navbar-center {
+    gap: 3px;
+    margin-left: 5px;
+  }
+
+  .nav-link-custom {
+    font-size: 8.5px;
+    padding: 1px 0 !important;
+  }
+
+  .btn-custom-green,
+  .btn-outline-danger-custom {
+    font-size: 8px;
+    padding: 0 3px;
+  }
+
+  .navbar-right {
+    gap: 3px;
+  }
+}
+
+
+@media (max-width: 699px) {
+  .navbar-brand img {
+    height: 30px;
+  }
+
+  .navbar-center {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    margin-left: 0;
+  }
+
+  .navbar-right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    margin-left: 0;
+  }
+
+  .nav-link-custom {
+    font-size: 11px;
+  }
+
+  .btn-custom-green,
+  .btn-outline-danger-custom {
+    font-size: 10px;
+    padding: 1px 5px;
+  }
+}
+
+
+
+
+@media (min-width: 1200px) {
+  .membership-modal .modal-dialog {
+    max-width: 750px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .membership-modal .modal-dialog {
+    max-width: 700px;
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .membership-modal .modal-dialog {
+    max-width: 600px;
+  }
+  .membership-modal .modal-title {
+    font-size: 1.1rem;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .membership-modal .modal-dialog {
+    width: 95%;
+    margin: 0.5rem auto;
+  }
+
+  .membership-modal .modal-content {
+    border-width: 1.5px;
+    border-radius: 10px;
+  }
+
+  .membership-modal .modal-title {
+    font-size: 1rem;
+  }
+
+  .membership-modal .modal-body {
+    padding: 0.8rem 1rem;
   }
 }

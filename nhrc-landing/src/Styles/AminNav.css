@@ -1,0 +1,136 @@
+.adminnav-container {
+  background-color: #00343d;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 25px;
+  height: 60px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1100;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.adminnav-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.adminnav-icon {
+  font-size: 30px;
+  background-color: #006400;
+  border-radius: 50%;
+  border: 3px solid #1fd65f;
+  padding: 4px;
+  color: white;
+}
+
+.adminnav-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.adminnav-center {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.adminnav-center-text {
+  color: #f7e707;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.adminnav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.adminnav-right-icon {
+  font-size: 22px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.adminnav-right-icon:hover {
+  transform: scale(1.2);
+}
+
+.adminnav-profile {
+  position: relative;
+}
+
+.adminnav-profile-img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.adminnav-profile-img:hover {
+  transform: scale(1.1);
+}
+
+.adminnav-dropdown {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background: #fff;
+  color: #000;
+  border-radius: 6px;
+  width: 180px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease;
+}
+
+.adminnav-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border: none;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.3s;
+}
+
+.adminnav-dropdown-item:hover {
+  background: #f1f1f1;
+}
+
+.adminnav-dropdown-icon {
+  color: #003366;
+  font-size: 17px;
+}
+
+.adminnav-logout {
+  color: red !important;
+  border-top: 1px solid #ccc;
+}
+
+.adminnav-logout .adminnav-dropdown-icon {
+  color: red;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

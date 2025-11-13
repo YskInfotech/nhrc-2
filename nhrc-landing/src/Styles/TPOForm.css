@@ -1,207 +1,43 @@
-
-
-.tpo-page-wrapper {
+.representative-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #071032 0%, #071032 100%);
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #f0f4ff, #ffffff);
   padding: 20px;
-  overflow: hidden;
+  font-family: "Poppins", sans-serif;
 }
 
-
-.tpo-card-container {
-  background: #ffffff;
-  border-radius: 15px;
-  max-width: 900px;
+.representative-card {
+  background: #071032;
+  border: 2px solid #f5d50d;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 500px;
   width: 100%;
-  padding: 35px 40px;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
-  animation: fadeSlideIn 0.5s ease-in-out;
-
- 
-  max-height: 85vh;
-  overflow-y: auto;
-  scrollbar-width: thin; 
-  scrollbar-color: #bfc5d2 #f0f4ff; 
-}
-
-
-.tpo-card-container::-webkit-scrollbar {
-  width: 8px;
-}
-
-.tpo-card-container::-webkit-scrollbar-thumb {
-  background-color: #bfc5d2;
-  border-radius: 10px;
-}
-
-.tpo-card-container::-webkit-scrollbar-thumb:hover {
-  background-color: #8a94a8;
-}
-
-
-.tpo-card-title {
-  text-align: center;
-  font-size: 1.7rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin-bottom: 30px;
-  letter-spacing: 0.5px;
-}
-
-
-.tpo-label {
-  font-weight: 600;
-  color: #333;
-  font-size: 0.95rem;
-  margin-bottom: 5px;
-  display: block;
-}
-
-.tpo-input {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 0.95rem;
-  outline: none;
-  transition: border 0.3s ease, box-shadow 0.3s ease;
-}
-
-.tpo-input:focus {
-  border-color: #0066ff;
-  box-shadow: 0px 0px 5px rgba(0, 102, 255, 0.4);
-}
-
-
-.tpo-btn {
-  border: none;
-  border-radius: 6px;
-  padding: 10px 25px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.tpo-btn-back {
-  background-color: #6c757d;
   color: white;
 }
 
-.tpo-btn-back:hover {
-  background-color: #4e555b;
-}
-
-.tpo-btn-register {
-  background-color: #28a745;
-  color: white;
-}
-
-.tpo-btn-register:hover {
-  background-color: #1e7e34;
-}
-
-
-.tpo-captcha-box {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 12px;
-  margin-bottom: 8px;
-}
-
-.tpo-captcha-text {
-  background: #f8f8f8;
-  border: 1px solid #ccc;
-  padding: 6px 18px;
-  border-radius: 6px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  color: #333;
-  font-size: 1.05rem;
-  width: auto;
-}
-
-.tpo-captcha-refresh {
-  color: #007bff;
-  font-size: 1.3rem;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.tpo-captcha-refresh:hover {
-  transform: rotate(180deg);
-  color: #0056b3;
-}
-
-.tpo-captcha-input {
-  width: 60%;
-  padding: 8px 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  margin-top: 5px;
-}
-
-
-.tpo-form-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px 25px;
+.representative-card .title {
+  font-weight: 600;
+  color: #f5d50d;
   margin-bottom: 20px;
+  text-align: left;
 }
 
-
-.tpo-form-actions {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 25px;
+.representative-card select {
+  background-color: #f0f0f0;
+  color: #333;
 }
 
+.representative-card .btn-success {
+  background-color: #28a745;
+  border: none;
+}
 
 @media (max-width: 768px) {
-  .tpo-card-container {
-    padding: 25px 20px;
-  }
-
-  .tpo-card-title {
-    font-size: 1.4rem;
-  }
-
-  .tpo-captcha-box {
-    flex-direction: row;
-    justify-content: flex-start;
-  }
-
-  .tpo-captcha-text {
-    padding: 5px 14px;
-    font-size: 1rem;
-  }
-
-  .tpo-captcha-input {
-    width: 100%;
-  }
-
-  .tpo-btn {
-    width: 48%;
-    padding: 10px;
-  }
-
-  .tpo-form-actions {
-    flex-direction: column;
-    gap: 15px;
-  }
-}
-
-@keyframes fadeSlideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .representative-card {
+    padding: 20px;
+    width: 90%;
   }
 }

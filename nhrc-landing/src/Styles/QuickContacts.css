@@ -1,0 +1,287 @@
+.quickcontacts-container {
+  background: #f9f9f9;
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; 
+  overflow: hidden; 
+}
+
+
+.quickcontacts-header {
+  flex-shrink: 0;
+}
+.quickcontacts-header h2 {
+  text-align: center;
+  color: #a30000;
+  margin-bottom: 10px;
+}
+.summary {
+  text-align: center;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+
+.contact-actions {
+  position: sticky;
+  top: 0;
+  background: #f9f9f9;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 15px 0;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.search-box {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+}
+
+.search-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #888;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 10px 35px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.filter-btn,
+.delete-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+.filter-btn {
+  background-color: #1b4b91;
+}
+.delete-btn {
+  background-color: #b31d1d;
+}
+
+
+.contact-list {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+
+.contact-list::-webkit-scrollbar {
+  width: 6px;
+}
+.contact-list::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.select-all {
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+
+.contact-card {
+  display: flex;
+  flex-wrap: wrap;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.avatar {
+  background: #5b31ff;
+  color: #fff;
+  font-weight: bold;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.details {
+  flex: 1;
+}
+
+.icon {
+  margin-right: 6px;
+  color: #5b31ff;
+}
+
+.status-section {
+  text-align: right;
+}
+
+.status {
+  display: block;
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 5px 10px;
+  margin-bottom: 6px;
+  color: #fff;
+}
+.status.pending {
+  background-color: #b31d1d;
+}
+.status.approved {
+  background-color: #2d9b5f;
+}
+.view-btn {
+  background: #ffcc00;
+  color: #000;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-box {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  color: #000;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.popup-box h3 {
+  color: #1b4b91;
+  margin-bottom: 15px;
+}
+
+.popup-card {
+  background: #f8f8f8;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.popup-avatar {
+  background: #5b31ff;
+  color: #fff;
+  font-size: 2rem;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.field {
+  margin-bottom: 12px;
+}
+.field label {
+  display: block;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.field input,
+.field textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px;
+  background: #fff;
+  font-size: 0.9rem;
+}
+.field textarea {
+  resize: none;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+.approve-btn {
+  background: #2d9b5f;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.pending-btn {
+  background: #b31d1d;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+  .contact-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .status-section {
+    width: 100%;
+    text-align: left;
+  }
+
+  .popup-box {
+    width: 95%;
+  }
+
+  .contact-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

@@ -1,4 +1,4 @@
-/* ===== Heading Style ===== */
+
 .service-heading123 {
   color: #061657;
   font-size: 2rem;
@@ -13,7 +13,7 @@
   letter-spacing: 1px;
 }
 
-/* Decorative underline */
+
 .service-heading123::after {
   content: "";
   position: absolute;
@@ -26,7 +26,7 @@
   border-radius: 4px;
 }
 
-/* ===== Container Layout ===== */
+
 .services-container {
   width: 100%;
   overflow-x: hidden;
@@ -34,14 +34,14 @@
   padding: 1.5rem 1rem 3rem;
 }
 
-/* Stack all service cards vertically */
+
 .service-blocks {
   display: flex;
   flex-direction: column;
-  gap: 30px; /* reduced gap between each card */
+  gap: 30px; 
 }
 
-/* ===== Each Service Card ===== */
+
 .service-card {
   display: flex;
   align-items: center;
@@ -54,7 +54,7 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* Text content */
+
 .service-content {
   flex: 1;
   min-width: 280px;
@@ -73,7 +73,7 @@
   line-height: 1.6;
 }
 
-/* Image section */
+
 .service-image {
   flex: 1;
   display: flex;
@@ -95,9 +95,7 @@
   transform: scale(1.02);
 }
 
-/* ===== Responsive Design ===== */
 
-/* Tablets and below */
 @media (max-width: 992px) {
   .service-card {
     flex-direction: column;
@@ -128,7 +126,7 @@
   }
 }
 
-/* Mobile phones */
+
 @media (max-width: 576px) {
   .service-heading123 {
     font-size: 1.5rem;
@@ -152,7 +150,7 @@
   }
 }
 
-/* Extra small devices */
+
 @media (max-width: 400px) {
   .service-heading123 {
     font-size: 1.3rem;
@@ -166,4 +164,19 @@
   .service-card {
     gap: 0.6rem;
   }
+}
+
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+
+
+.dashboard-content {
+  margin-left: 250px;
+  padding: 20px;
+  flex: 1;
+  background: #f7f8fa;
+  overflow-y: auto;
 }

@@ -1,0 +1,261 @@
+.university-wrapper {
+  min-height: 100vh;
+  background: #071032;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+
+.step-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.step {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #00c853;
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.line {
+  width: 80px;
+  height: 3px;
+  background: #fff;
+}
+
+.step-labels {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 15px;
+  width: 320px;
+  margin: 10px 0 25px 0;
+}
+
+
+.university-card {
+  background: #071032;
+  border: 2px solid #f5d50d;
+  border-radius: 12px;
+  padding: 30px;
+  width: 100%;
+  max-width: 900px;
+  box-shadow: 0 0 20px rgba(245, 213, 13, 0.3);
+  color: #fff;
+}
+
+.university-title {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+
+.university-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+input,
+select {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  color: #000;
+  background-color: #fff;
+  width: 100%;
+}
+
+input:focus,
+select:focus {
+  border-color: #f5d50d;
+  box-shadow: 0 0 5px #f5d50d;
+  outline: none;
+}
+
+
+.file-group {
+  flex: 1;
+}
+
+.file-group label {
+  display: block;
+  font-size: 14px;
+  color: #f5d50d;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+
+.year-group {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+}
+
+
+.captcha-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #f5d50d;
+  font-weight: 600;
+}
+
+.captcha-text {
+  font-size: 16px;
+  color:#fff !important;
+}
+
+.captcha-row input {
+  width: 30px !important;
+  text-align: center;
+  border-radius: 6px;
+}
+
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.back-btn {
+  background: transparent;
+  color: #f5d50d;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.register-btn {
+  background: #00c853;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.register-btn:hover {
+  background: #009624;
+}
+
+
+.captcha-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #f5d50d;
+  font-weight: 600;
+  position: relative;
+}
+
+.captcha-row input {
+  width: 80px;
+  text-align: center;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.correct-input {
+  border: 2px solid #00c853 !important;
+  box-shadow: 0 0 6px #00c853;
+}
+
+.wrong-input {
+  border: 2px solid #ff1744 !important;
+  box-shadow: 0 0 6px #ff1744;
+}
+
+.captcha-icon {
+  font-size: 20px;
+  position: relative;
+  top: 2px;
+}
+
+.captcha-icon.correct {
+  color: #00c853;
+}
+
+.captcha-icon.wrong {
+  color: #ff1744;
+}
+
+.refresh-btn {
+  background: transparent;
+  border: none;
+  color: #f5d50d;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.refresh-btn:hover {
+  transform: rotate(180deg);
+}
+
+
+
+@media (max-width: 1024px) {
+  .university-card {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .step-labels {
+    width: 260px;
+    font-size: 13px;
+  }
+
+  .captcha-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .captcha-row input {
+    width: 100%;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .register-btn {
+    width: 100%;
+  }
+}

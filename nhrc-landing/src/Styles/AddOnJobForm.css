@@ -1,0 +1,133 @@
+.addonjob-container {
+  max-width: 450px;
+  margin: 40px auto;
+  background-color: #fafafa;
+  border-radius: 10px;
+  padding: 25px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.addonjob-title {
+  text-align: left;
+  color: #b80000;
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.addonjob-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.addonjob-field label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.addonjob-field input,
+.addonjob-field select,
+.addonjob-field textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  background-color: #fff;
+}
+
+.addonjob-field textarea {
+  resize: none;
+  height: 70px;
+}
+
+.addonjob-skillbox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  padding: 8px;
+  background-color: #fff;
+}
+
+.addonjob-skilltag {
+  border: 1px solid #d3d3d3;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #555;
+  transition: all 0.2s ease;
+}
+
+.addonjob-skilltag.selected {
+  background-color: #e0f7f0;
+  border-color: #00a86b;
+  color: #00a86b;
+  font-weight: 600;
+}
+
+.addonjob-expbox label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.addonjob-exp {
+  display: flex;
+  gap: 10px;
+}
+
+.addonjob-exp select {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1.5px solid #ccc;
+  font-size: 14px;
+}
+
+.addonjob-btnbox {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.addonjob-nextbtn {
+  background-color: #009c34;
+  color: white;
+  padding: 10px 28px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+.addonjob-nextbtn:hover {
+  background-color: #007c2a;
+}
+
+
+@media (max-width: 500px) {
+  .addonjob-container {
+    max-width: 95%;
+    padding: 20px;
+  }
+
+  .addonjob-title {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .addonjob-exp {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,219 @@
+
+
+.repuni-container {
+  background: linear-gradient(180deg, #071032 0%, #071032 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  font-family: "Poppins", sans-serif;
+}
+
+
+.repuni-card {
+  background: linear-gradient(180deg, #031a45 0%, #071032 100%);
+  border: 2px solid #f5d50d;
+  border-radius: 14px;
+  max-width: 950px;
+  width: 100%;
+  padding: 35px 40px;
+  box-shadow: 0 0 18px rgba(245, 213, 13, 0.35);
+  color: #fff;
+}
+
+
+.repuni-progress-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.repuni-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.repuni-circle {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid #f5d50d;
+  color: #f5d50d;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+.repuni-step.active .repuni-circle,
+.repuni-step.completed .repuni-circle {
+  background: #f5d50d;
+  color: #071032;
+}
+.repuni-arrow {
+  margin: 0 10px;
+  color: #f5d50d;
+  font-size: 22px;
+}
+
+
+.repuni-heading {
+  text-align: center;
+  color: #f5d50d;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+
+.repuni-form .repuni-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 30px;
+}
+
+.repuni-form label {
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.repuni-form input,
+.repuni-form select,
+.repuni-form textarea {
+  width: 100%;
+  background: #0e2559;
+  border: 1px solid #f5d50d;
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 10px;
+  outline: none;
+  font-size: 14px;
+}
+
+.repuni-form textarea {
+  min-height: 70px;
+  resize: none;
+}
+
+.repuni-form input::placeholder {
+  color: #d1d1d1;
+}
+
+
+.repuni-file-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.repuni-file-group input[type="file"] {
+  border: 1px dashed #f5d50d;
+  padding: 6px;
+  color: #f5d50d;
+  border-radius: 6px;
+  background: transparent;
+}
+
+
+.repuni-captcha {
+  margin-top: 25px;
+}
+.repuni-captcha p {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.repuni-captcha-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.repuni-captcha-box span {
+  color: #f5d50d;
+  font-weight: 600;
+}
+.repuni-captcha-box input {
+  width: 80px;
+}
+
+
+.repuni-btn-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.repuni-back,
+.repuni-register {
+  padding: 10px 25px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.repuni-back {
+  background: transparent;
+  border: 1px solid #f5d50d;
+  color: #f5d50d;
+}
+.repuni-back:hover {
+  background: #f5d50d;
+  color: #071032;
+}
+
+.repuni-register {
+  background: #f5d50d;
+  border: none;
+  color: #071032;
+}
+.repuni-register:hover {
+  background: #ffe94d;
+}
+
+
+.repuni-popup {
+  background: #0b1c47;
+  border: 2px solid #f5d50d;
+  border-radius: 14px;
+  padding: 35px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(245, 213, 13, 0.4);
+  max-width: 600px;
+}
+.repuni-popup h2 {
+  color: #f5d50d;
+  margin-bottom: 10px;
+}
+.repuni-popup-box {
+  background: #071032;
+  border: 1px solid #f5d50d;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 10px;
+}
+.repuni-continue {
+  background: #f5d50d;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.repuni-continue:hover {
+  background: #ffe94d;
+}
+
+
+@media (max-width: 768px) {
+  .repuni-card {
+    padding: 25px;
+  }
+  .repuni-form .repuni-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,354 +1,243 @@
 import React, { useState, useEffect } from "react";
 import "../../Styles/EmployeeForm.css";
-import { FaSyncAlt } from "react-icons/fa";
+import { IoPlayBackOutline } from "react-icons/io5";
 
-const Employeer = ({ onBackToPersonal }) => {
-const [personalData, setPersonalData] = useState(null);
-const [formData, setFormData] = useState({
-organizationName: "",
-industry: "",
-department: "",
-designation: "",
-companyUrl: "",
-workingLocation: "",
-companyStrength: "",
-employerId: "",
-experience: "",
-officialEmail: "",
-userName: "",
-password: "",
-confirmPassword: "",
-referralId: "",
-captchaInput: "",
-});
+function Employeer({ personalData = {}, onBackToPersonal, onNextForm }) {
+  const [formData, setFormData] = useState({
+    organizationName: "",
+    industry: "",
+    designation: "",
+    department: "",
+    companyUrl: "",
+    workingLocation: "",
+    companyStrength: "",
+    employeeId: "",
+    experience: "",
+    officialEmail: "",
+    referralId: "",
+  });
 
-const [captcha, setCaptcha] = useState(generateCaptcha());
-const [errors, setErrors] = useState({});
+  const [otp, setOtp] = useState("");
+  const [enteredOtp, setEnteredOtp] = useState(["", "", "", ""]);
+  const [otpVerified, setOtpVerified] = useState(false);
+  const [otpSent, setOtpSent] = useState(false);
+  const [selectedFiles, setSelectedFiles] = useState([]);
 
+  useEffect(() => {
+    
+    if (personalData?.email) {
+      setFormData((prev) => ({ ...prev, officialEmail: personalData.email }));
+    } else {
+      const saved = JSON.parse(localStorage.getItem("employeeDetails"));
+      if (saved?.employerData) {
+        setFormData((prev) => ({ ...prev, ...saved.employerData }));
+      }
+    }
+  }, [personalData]);
 
-useEffect(() => {
-const memberData = localStorage.getItem("memberData");
-if (memberData) {
-setPersonalData(JSON.parse(memberData));
-}
-}, []);
+  const generateOtp = () => Math.floor(1000 + Math.random() * 9000).toString();
 
+  const handleSendOtp = () => {
+    if (!formData.officialEmail) {
+      alert("Please enter your official email first!");
+      return;
+    }
+    const otpCode = generateOtp();
+    setOtp(otpCode);
+    setOtpSent(true);
+    alert(`OTP sent to ${formData.officialEmail}: ${otpCode}`);
+  };
 
-function generateCaptcha() {
-const chars =
-"ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz123456789";
-let text = "";
-for (let i = 0; i < 6; i++)
-text += chars.charAt(Math.floor(Math.random() * chars.length));
-return text;
-}
+  const handleOtpChange = (index, value) => {
+    const newOtp = [...enteredOtp];
+    newOtp[index] = value.slice(0, 1);
+    setEnteredOtp(newOtp);
+  };
 
-const refreshCaptcha = () => setCaptcha(generateCaptcha());
+  const handleVerifyOtp = () => {
+    if (enteredOtp.join("") === otp) {
+      setOtpVerified(true);
+      alert("Email Verified Successfully!");
+    } else {
+      alert("Invalid OTP, please try again!");
+    }
+  };
 
-const handleChange = (e) => {
-const { name, value } = e.target;
-setFormData((prev) => ({ ...prev, [name]: value }));
-};
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
+  const handleFileUpload = (e) => {
+    const files = Array.from(e.target.files);
+    setSelectedFiles((prev) => [...prev, ...files]);
+  };
 
-const validateForm = () => {
-let newErrors = {};
-const emailRegex =
-  /^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com|[\w-]+\.(in|org))$/;
-const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
-const alphaRegex = /^[A-Za-z\s]+$/;
+  const handleNext = (e) => {
+    e.preventDefault();
+    if (!otpVerified) {
+      alert("Please verify your email before proceeding!");
+      return;
+    }
 
+    
+    const combined = {
+      personalData,
+      employerData: { ...formData },
+      selectedFiles,
+    };
 
-if (!formData.organizationName.match(alphaRegex))
-  newErrors.organizationName = "Only alphabets allowed";
-if (!formData.department.match(alphaRegex))
-  newErrors.department = "Only alphabets allowed";
-if (!formData.companyUrl.match(urlRegex))
-  newErrors.companyUrl = "Enter valid URL (http/https)";
-if (!formData.companyStrength || isNaN(formData.companyStrength))
-  newErrors.companyStrength = "Enter valid number";
-if (!formData.employerId) newErrors.employerId = "Required field";
-if (!formData.experience) newErrors.experience = "Required field";
-if (!formData.officialEmail.match(emailRegex))
-  newErrors.officialEmail = "Enter valid email";
-if (!formData.password) newErrors.password = "Password required";
-if (formData.password !== formData.confirmPassword)
-  newErrors.confirmPassword = "Passwords do not match";
-if (formData.captchaInput !== captcha)
-  newErrors.captchaInput = "Invalid captcha";
+    
+    localStorage.setItem("employeeDetails", JSON.stringify(combined));
 
-setErrors(newErrors);
-return Object.keys(newErrors).length === 0;
+    
+    if (onNextForm) onNextForm(combined);
+  };
 
-
-};
-
-
-const handleSubmit = (e) => {
-e.preventDefault();
-if (validateForm()) {
-const combinedData = {
-personalDetails: personalData || {},
-employeeDetails: formData,
-};
-
-
-  localStorage.setItem("employeeFormData", JSON.stringify(combinedData));
-  sessionStorage.setItem("employeeFormData", JSON.stringify(combinedData));
-
-  alert("Employee details submitted successfully!");
-  onBackToPersonal();
-}
-
-
-};
-
-return ( <div className="employee-form-wrapper"> <div className="employee-card"> <h4 className="employee-title">EMPLOYEE DETAILS</h4> <form onSubmit={handleSubmit} className="employee-form"> <div className="row"> <div className="col"> <label>
-Organization Name<span className="required">*</span> </label> <input
-             type="text"
-             name="organizationName"
-             value={formData.organizationName}
-             onChange={handleChange}
-             placeholder="Organization Name"
-             required
-           />
-{errors.organizationName && <small>{errors.organizationName}</small>} </div>
-
-        <div className="col">
-          <label>
-            Industry<span className="required">*</span>
-          </label>
-          <select
-            name="industry"
-            value={formData.industry}
-            onChange={handleChange}
-            required
-          >
-            <option value="">Select Industry</option>
-            <option>IT</option>
-            <option>Finance</option>
-            <option>Education</option>
-            <option>Healthcare</option>
-            <option>Manufacturing</option>
-          </select>
-        </div>
-
-        <div className="col">
-          <label>
-            Department<span className="required">*</span>
-          </label>
-          <input
-            type="text"
-            name="department"
-            value={formData.department}
-            onChange={handleChange}
-            placeholder="Department"
-            required
-          />
-          {errors.department && <small>{errors.department}</small>}
-        </div>
-
-        <div className="col">
-          <label>
-            Designation<span className="required">*</span>
-          </label>
-          <select
-            name="designation"
-            value={formData.designation}
-            onChange={handleChange}
-            required
-          >
-            <option value="">Select Designation</option>
-            <option>Developer</option>
-            <option>Tester</option>
-            <option>Manager</option>
-            <option>HR</option>
-          </select>
-        </div>
-
-        <div className="col">
-          <label>
-            Company URL<span className="required">*</span>
-          </label>
-          <input
-            type="url"
-            name="companyUrl"
-            value={formData.companyUrl}
-            onChange={handleChange}
-            placeholder="Company URL"
-            required
-          />
-          {errors.companyUrl && <small>{errors.companyUrl}</small>}
-        </div>
-
-        <div className="col">
-          <label>
-            Working Location<span className="required">*</span>
-          </label>
-          <input
-            type="text"
-            name="workingLocation"
-            value={formData.workingLocation}
-            onChange={handleChange}
-            placeholder="Working Location"
-            required
-          />
-        </div>
-
-        <div className="col">
-          <label>
-            Company Strength<span className="required">*</span>
-          </label>
-          <input
-            type="number"
-            name="companyStrength"
-            value={formData.companyStrength}
-            onChange={handleChange}
-            placeholder="Company Strength"
-            required
-          />
-          {errors.companyStrength && <small>{errors.companyStrength}</small>}
-        </div>
-
-        <div className="col">
-          <label>
-            Employer ID<span className="required">*</span>
-          </label>
-          <input
-            type="text"
-            name="employerId"
-            value={formData.employerId}
-            onChange={handleChange}
-            placeholder="Enter Employer ID"
-            required
-          />
-        </div>
-
-        <div className="col">
-          <label>
-            Experience<span className="required">*</span>
-          </label>
-          <input
-            type="text"
-            name="experience"
-            value={formData.experience}
-            onChange={handleChange}
-            placeholder="Experience"
-            required
-          />
-        </div>
-
-        <div className="col">
-          <label>
-            Official Email<span className="required">*</span>
-          </label>
-          <input
-            type="email"
-            name="officialEmail"
-            value={formData.officialEmail}
-            onChange={handleChange}
-            placeholder="Official Email"
-            required
-          />
-          {errors.officialEmail && <small>{errors.officialEmail}</small>}
-        </div>
-
-        <div className="col">
-          <label>
-            User Name<span className="required">*</span>
-          </label>
-          <input
-            type="text"
-            name="userName"
-            value={formData.userName}
-            onChange={handleChange}
-            placeholder="User Name"
-            required
-          />
-        </div>
-
-        <div className="col">
-          <label>
-            Password<span className="required">*</span>
-          </label>
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            placeholder="Password"
-            required
-          />
-          {errors.password && <small>{errors.password}</small>}
-        </div>
-
-        <div className="col">
-          <label>
-            Confirm Password<span className="required">*</span>
-          </label>
-          <input
-            type="password"
-            name="confirmPassword"
-            value={formData.confirmPassword}
-            onChange={handleChange}
-            placeholder="Confirm Password"
-            required
-          />
-          {errors.confirmPassword && <small>{errors.confirmPassword}</small>}
-        </div>
-
-        <div className="col">
-          <label>Referral ID</label>
-          <input
-            type="text"
-            name="referralId"
-            value={formData.referralId}
-            onChange={handleChange}
-            placeholder="Referral ID"
-          />
-        </div>
-
-        {/* Captcha */}
-        <div className="captcha-col">
-          <label>
-            CAPTCHA<span className="required">*</span>
-          </label>
-          <div className="captcha-box">
-            <span className="captcha-text">{captcha}</span>
-            <button
-              type="button"
-              onClick={refreshCaptcha}
-              className="captcha-refresh"
-            >
-              <FaSyncAlt />
-            </button>
+  return (
+    <div className="personaldetails-section">
+      <h3 className="heading">EMPLOYEE DETAILS</h3>
+      <form className="employee-form" onSubmit={handleNext}>
+        <div className="row">
+          <div className="col-md-6">
+            <label>Organization Name*</label>
+            <input
+              type="text"
+              name="organizationName"
+              value={formData.organizationName}
+              onChange={handleChange}
+              placeholder="Enter Organization Name"
+              required
+            />
           </div>
-          <input
-            type="text"
-            name="captchaInput"
-            value={formData.captchaInput}
-            onChange={handleChange}
-            placeholder="Enter Captcha"
-            required
-          />
-          {errors.captchaInput && <small>{errors.captchaInput}</small>}
+
+          <div className="col-md-6">
+            <label>Industry*</label>
+            <select name="industry" value={formData.industry} onChange={handleChange} required>
+              <option value="">Select Industry</option>
+              <option>Information Technology (IT)</option>
+              <option>Education</option>
+              <option>Healthcare</option>
+              <option>Manufacturing</option>
+              <option>Finance</option>
+              <option>Others</option>
+            </select>
+          </div>
+
+          <div className="col-md-6">
+            <label>Designation*</label>
+            <select name="designation" value={formData.designation} onChange={handleChange} required>
+              <option value="">Select Designation</option>
+              <option>Developer</option>
+              <option>Manager</option>
+              <option>HR</option>
+              <option>Tester</option>
+            </select>
+          </div>
+
+          <div className="col-md-6">
+            <label>Department*</label>
+            <select name="department" value={formData.department} onChange={handleChange} required>
+              <option value="">Select Department</option>
+              <option>Development</option>
+              <option>Testing</option>
+              <option>HR</option>
+              <option>Finance</option>
+            </select>
+          </div>
+
+          <div className="col-md-6">
+            <label>Company Website URL*</label>
+            <input type="url" name="companyUrl" value={formData.companyUrl} onChange={handleChange} placeholder="Company Website URL" required />
+          </div>
+
+          <div className="col-md-6">
+            <label>Working Location*</label>
+            <input type="text" name="workingLocation" value={formData.workingLocation} onChange={handleChange} placeholder="Working Location" required />
+          </div>
+
+          <div className="col-md-6">
+            <label>Company Strength*</label>
+            <select name="companyStrength" value={formData.companyStrength} onChange={handleChange} required>
+              <option value="">Select Strength</option>
+              <option>1-50</option>
+              <option>50-100</option>
+              <option>100-200</option>
+              <option>200-500</option>
+              <option>500+</option>
+            </select>
+          </div>
+
+          <div className="col-md-6">
+            <label>Employee ID*</label>
+            <input type="text" name="employeeId" value={formData.employeeId} onChange={handleChange} placeholder="Enter Employee ID" required />
+          </div>
+
+          <div className="col-md-6">
+            <label>Experience*</label>
+            <input type="number" name="experience" value={formData.experience} onChange={handleChange} placeholder="Experience (in years)" required />
+          </div>
+
+          <div className="col-md-6">
+            <label>ID Card Proof*</label>
+            <input type="file" accept=".jpg,.png,.pdf" multiple onChange={handleFileUpload} required />
+            {selectedFiles.length > 0 && (
+              <ul className="file-list">
+                {selectedFiles.map((file, index) => (
+                  <li key={index}>{file.name}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+
+          <div className="col-md-6">
+            <label>Official Email*</label>
+            <div className="email-row">
+              <input
+                type="email"
+                name="officialEmail"
+                value={formData.officialEmail}
+                onChange={handleChange}
+                placeholder="Official Email"
+                required
+              />
+              <button type="button" className="verify-btn" onClick={handleSendOtp} disabled={otpSent || otpVerified}>
+                {otpVerified ? "Verified" : "Send OTP"}
+              </button>
+            </div>
+          </div>
+
+          <div className="col-md-6">
+            <label>Referral ID</label>
+            <input type="text" name="referralId" value={formData.referralId} onChange={handleChange} placeholder="Referral ID" />
+          </div>
+
+          {otpSent && !otpVerified && (
+            <div className="col-12 otp-section">
+              <label>Email OTP*</label>
+              <div className="otp-inline">
+                {enteredOtp.map((digit, index) => (
+                  <input key={index} type="text" maxLength="1" value={digit} onChange={(e) => handleOtpChange(index, e.target.value)} />
+                ))}
+                <button type="button" className="otp-verify" onClick={handleVerifyOtp}>
+                  Submit
+                </button>
+              </div>
+            </div>
+          )}
         </div>
-      </div>
 
-      <div className="form-actions">
-        <button type="button" onClick={onBackToPersonal} className="back-btn">
-          Back
-        </button>
-        <button type="submit" className="register-btn">
-          Register
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-
-
-);
-};
+        <div className="form-actions">
+          <button type="button" className="btn back-btn" onClick={onBackToPersonal}>
+            <IoPlayBackOutline className="mx-1" /> Back
+          </button>
+          <button type="submit" className="btn next-btn">
+            Next
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+}
 
 export default Employeer;

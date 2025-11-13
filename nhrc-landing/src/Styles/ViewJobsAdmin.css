@@ -1,0 +1,195 @@
+
+.vja-container {
+  width: 100%;
+  padding: 20px;
+  font-family: "Inter", sans-serif;
+}
+
+
+.vja-title {
+  text-align: center;
+  color: #b91c1c;
+  font-weight: 700;
+  margin-bottom: 25px;
+  font-size: 28px;
+}
+
+
+.vja-filters-row .vja-input,
+.vja-filters-row .vja-select {
+  border-radius: 6px;
+  height: 42px;
+  font-size: 14px;
+}
+
+.vja-apply-btn {
+  width: 100%;
+  height: 42px;
+  background-color: #0047ab;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+}
+
+.vja-apply-btn:hover {
+  background-color: #00398a;
+   color: #fff !important;
+}
+
+
+.vja-badge-active {
+  background: #16a34a;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+}
+
+.vja-badge-inactive {
+  background: #f97316;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+}
+
+
+.vja-delete-btn {
+  background: #dc2626;
+  color: white;
+  padding: 7px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  border: none;
+}
+
+.vja-delete-btn:hover {
+  background: #b91c1c;
+}
+
+
+.vja-table {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  border-collapse: collapse;
+}
+
+.vja-table thead {
+  background: #003366;
+  color: white;
+}
+
+.vja-table thead th {
+  padding: 12px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.vja-table tbody tr {
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.vja-table tbody tr:hover {
+  background: #f1f5f9;
+}
+
+.vja-table td {
+  text-align: center;
+  padding: 10px;
+}
+
+
+.vja-status-active {
+  color: #16a34a !important;
+  font-weight: 700;
+}
+
+.vja-status-inactive {
+  color: #dc2626 !important;
+  font-weight: 700;
+}
+
+
+.vja-edit-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 14px;
+}
+
+.vja-edit-btn:hover {
+  background: #1d4ed8;
+}
+
+
+
+.vja-modal-dialog {
+  max-width: 650px !important;
+}
+
+.vja-modal-header {
+  background: #003366 !important;
+  color: white !important;
+}
+
+.vja-modal-content {
+  border-radius: 12px !important;
+}
+
+
+.vja-modal-body {
+  max-height: 60vh !important;
+  overflow-y: auto !important;
+  padding-right: 10px;
+}
+
+
+.vja-modal-footer {
+  position: sticky;
+  bottom: 0;
+  background: white;
+  padding: 12px;
+  border-top: 1px solid #ddd;
+  z-index: 5;
+}
+
+
+
+@media (max-width: 768px) {
+  .vja-title {
+    font-size: 22px;
+  }
+
+  .vja-table thead {
+    display: none;
+  }
+
+  .vja-table tbody tr {
+    display: block;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+  }
+
+  .vja-table tbody tr td {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 4px;
+  }
+
+  .vja-table tbody tr td:before {
+    content: attr(data-label);
+    font-weight: 700;
+    color: #555;
+  }
+
+  .vja-edit-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
